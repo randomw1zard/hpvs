@@ -39,8 +39,8 @@ USER postgres
 # Note: here we use ``&&\`` to run commands one after the other - the ``\``                                                                       
 #       allows the RUN command to span multiple lines.                                                                                            
 RUN /etc/init.d/postgresql start &&\                                                                                                              
-    psql --command "CREATE USER docker WITH SUPERUSER PASSWORD 'docker'; ALTER USER postgres PASSWORD 'pgans3v3#';" &&\                           
-    createdb -O docker docker                                                                                                                     
+    psql --command "ALTER USER postgres PASSWORD 'pgans3v3#';" &&\                           
+    createdb -O postgres hpvs                                                                                                                     
                                                                                                                                                   
 # Adjust PostgreSQL configuration so that remote connections to the database are possible. and add ``listen_addresses`` to ``/etc/postgresql/9.6/main/postgresql.conf``                                                                                                                             
 RUN echo "host all  all    0.0.0.0/0  md5" >> /etc/postgresql/10/main/pg_hba.conf &&\                                                             
