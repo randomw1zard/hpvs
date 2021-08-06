@@ -1,7 +1,7 @@
 #FROM ubuntu                                                                                                                                      
 # MAINTAINER email#dot.com                                                                                                                        
 #FROM ibmzcontainers/hpvsop-base-ssh:1.2.3-release-d0651e4                                                                                         
-FROM docker_base_user/hpvsop-base-ssh:latest
+FROM randomw1zard/docker_base_user:latest
 RUN apt-get update && apt-get install gnupg2 -y                                                                                                   
                                                                                                                                                   
 # Add the PostgreSQL PGP key to verify their Debian packages.                                                                                     
